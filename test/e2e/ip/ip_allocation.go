@@ -4,19 +4,19 @@ import (
 	"ci-demo/test/e2e/ging"
 	"context"
 	"fmt"
+	"os"
 
-	"github.com/onsi/ginkgo"
-	"github.com/onsi/gomega"
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"k8s.io/client-go/util/homedir"
 	"k8s.io/klog/v2"
 )
 
-var _ = ginkgo.Describe("[Test IP Allocation]", func() {
-	g := ging.NewGinG("[Test IP Allocation]", fmt.Sprintf("%v/.kube/config", homedir.HomeDir()))
+var _ = Describe("[Test IP Allocation]", func() {
+	g := ging.NewGinG("[Test IP Allocation]", fmt.Sprintf("%v/.kube/config", os.Getenv("HOME")))
 
-	ginkgo.Describe("test describe", func() {
-		ginkgo.It("test It", func() {
+	Describe("test describe", func() {
+		It("test It", func() {
 			namespaces, err := g.KubeClientSet.CoreV1().Namespaces().List(context.Background(), metav1.ListOptions{})
 			if err != nil {
 				klog.Fatalf("[error when get namespaces]", err)
@@ -27,7 +27,7 @@ var _ = ginkgo.Describe("[Test IP Allocation]", func() {
 			}
 
 			dsc := g.GetDescribe()
-			gomega.Expect(dsc).Should(gomega.Equal("test-It"))
+			Expect(dsc).Should(Equal("test-It"))
 		})
 	})
 })
