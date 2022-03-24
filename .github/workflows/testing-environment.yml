@@ -35,9 +35,9 @@ jobs:
           pwd
       - name: workspace path
         run: |
-          echo -e "\033[41;36m home path is $HOME \033[0m"
-          echo -e "\033[41;36m workspace path is `pwd` \033[0m"
-          echo -e "\033[41;36m go build \033[0m"
-          CGO_ENABLED=0 GOOS=linux go build -o test ./test/main.go
-          echo -e "\033[41;36m run binary file ./test  \033[0m"
-          ./test
+          echo -e "\033[35m home path is $HOME \033[0m"
+          echo -e "\033[35m workspace path is `pwd` \033[0m"
+          echo -e "\033[35m go build \033[0m"
+          CGO_ENABLED=0 GOOS=linux go build -o test.run ./test/main.go
+          echo -e "\033[35m run binary file ./test.run \033[0m"
+          ./test.run
