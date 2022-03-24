@@ -43,5 +43,6 @@ jobs:
           ./test.run
       - name: e2e test
         run: |
+          # GOOS=linux GOARCH=amd64 ginkgo build .
           cd ./test/e2e/
-          ginkgo
+          ./e2e.test
