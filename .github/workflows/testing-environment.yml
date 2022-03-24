@@ -35,6 +35,8 @@ jobs:
           pwd
       - name: pro info
         run: |
-          cd ~
+          echo $HOME
+          pwd
           ls
+          cd ~
           pwd
