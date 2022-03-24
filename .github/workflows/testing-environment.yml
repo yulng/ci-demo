@@ -41,3 +41,7 @@ jobs:
           CGO_ENABLED=0 GOOS=linux go build -o test.run ./test/main.go
           echo -e "\033[35m run binary file ./test.run \033[0m"
           ./test.run
+      - name: e2e test
+        run: |
+          cd ./test/e2e/
+          ginkgo
