@@ -1,11 +1,13 @@
 package ging
 
 import (
+	"strings"
+
+	. "github.com/onsi/ginkgo/v2"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
 	"k8s.io/klog/v2"
-	"strings"
 )
 
 type GinG struct {
