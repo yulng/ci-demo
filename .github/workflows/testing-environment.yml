@@ -27,11 +27,14 @@ jobs:
       - name: Kubernetes info
         timeout-minutes: 5
         run: |
-          ls
-          pwd
           kubectl cluster-info
           kubectl get pods -n kube-system
           cat ~/.kube/config
           ls -lah ~/.kube/config
           cd ~/.kube/
+          pwd
+      - name: pro info
+        run: |
+          cd ~
+          ls
           pwd
