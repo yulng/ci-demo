@@ -2,9 +2,9 @@ name: testing-environment
 
 on:
   push: 
-    branches: [ master ]
+    branches: [ main ]
   pull_request: 
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch: 
   # workflow_run: triggered after "otherworkflow" completed
     # workflows: [ "otherworkflow" ] 
