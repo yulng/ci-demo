@@ -24,6 +24,7 @@ var _ = Describe("[Test IP Allocation]", func() {
 			}
 			for _, ns := range namespaces.Items {
 				fmt.Printf("%v", ns)
+				fmt.Printf("helloyang")
 			}
 
 			dsc := g.GetDescribe()
