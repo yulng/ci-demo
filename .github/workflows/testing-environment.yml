@@ -7,8 +7,10 @@ on:
     branches: [ main ]
   workflow_dispatch: 
     workflow_run: triggered after "otherworkflow" completed
-      workflows: [ "otherworkflow" ] 
-       types: [ completed ]
+      workflows: 
+        - "otherworkflow" 
+     types: 
+        - completed
 
 jobs:
   setup-go-k8s:
